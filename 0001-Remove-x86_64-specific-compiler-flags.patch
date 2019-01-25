@@ -1,0 +1,32 @@
+From 8f08c8a3f4a829cdf94e779665d1210f04eb8a0e Mon Sep 17 00:00:00 2001
+From: Tom Stellard <tstellar@redhat.com>
+Date: Thu, 24 Jan 2019 06:04:20 -0800
+Subject: [PATCH] Remove x86_64 specific compiler flags
+
+---
+ CMakeLists.txt | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b5fa9dd..04a7e8d 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -146,15 +146,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+ 
+-#
+-# Extend the compiler flags for 64-bit builds
+-#
+-if (IS64BIT)
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m64  -msse -msse2")
+-else()
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32")
+-endif()
+-
+ #
+ # Add compiler flags to include symbol information for debug builds
+ #
+-- 
+2.17.2
+

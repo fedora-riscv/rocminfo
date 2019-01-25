@@ -1,0 +1,38 @@
+From 0b5ccf90fa8824fde9b8f889e0904f89234ed3c3 Mon Sep 17 00:00:00 2001
+From: justxi <github@holzke.net>
+Date: Thu, 22 Mar 2018 19:41:59 +0100
+Subject: [PATCH] Add files via upload
+
+---
+ rocm_agent_enumerator | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/rocm_agent_enumerator b/rocm_agent_enumerator
+index 6700937..7a73339 100755
+--- a/rocm_agent_enumerator
++++ b/rocm_agent_enumerator
+@@ -78,7 +78,7 @@ def readFromROCMINFO():
+ 
+   try:
+     # run rocminfo
+-    rocminfo_output = subprocess.Popen(rocminfo_executable, stdout=subprocess.PIPE).communicate()[0].split('\n')
++    rocminfo_output = subprocess.Popen(rocminfo_executable, stdout=subprocess.PIPE).communicate()[0].decode("utf-8").split('\n')
+   except:
+     rocminfo_output = []
+ 
+@@ -138,10 +138,10 @@ def main():
+ 
+   # workaround to cope with existing rocm_agent_enumerator behavior where gfx000
+   # would always be returned
+-  print "gfx000"
++  print("gfx000")
+   
+   for gfx in target_list:
+-    print gfx
++    print(gfx)
+ 
+ if __name__ == "__main__":
+   main()
+-- 
+2.17.2
+

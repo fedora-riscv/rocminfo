@@ -1,0 +1,25 @@
+From 2a17931fc7c9beee3f0bd715e6de8322896b1fcf Mon Sep 17 00:00:00 2001
+From: Tom Stellard <tstellar@redhat.com>
+Date: Tue, 20 Feb 2018 13:34:43 -0800
+Subject: [PATCH] Use CXXFLAGS defined in the environment
+
+---
+ CMakeLists.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 449d2eb..6271435 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -164,6 +164,8 @@ if(ISDEBUG)
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ggdb -O0")
+ endif()
+ 
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} $ENV{CXXFLAGS}")
++
+ #
+ # Linux Linker options
+ ##
+-- 
+2.13.6
+

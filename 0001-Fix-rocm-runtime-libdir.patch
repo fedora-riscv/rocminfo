@@ -1,0 +1,27 @@
+From fc2653b801c3108e175424e3c3b0cb9b46e04951 Mon Sep 17 00:00:00 2001
+From: Tom Stellard <tstellar@redhat.com>
+Date: Tue, 20 Feb 2018 12:49:17 -0800
+Subject: [PATCH] Fix rocm-runtime libdir
+
+---
+ CMakeLists.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7bd7fd8..449d2eb 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -45,7 +45,9 @@ endif()
+ # Required Defines first:
+ 
+ set(ROCR_INC_DIR ${ROCM_DIR}/include)
+-set(ROCR_LIB_DIR ${ROCM_DIR}/lib)
++if(NOT "${ROCRTST_BLD_BITS}" STREQUAL 32)
++set(ROCR_LIB_DIR ${ROCM_DIR}/lib64)
++endif()
+ #
+ # Determine ROCR Header files are present
+ #
+-- 
+2.13.6
+
