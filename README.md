@@ -1,0 +1,3 @@
+# rocminfo
+
+The rocminfo package
