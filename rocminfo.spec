@@ -5,7 +5,7 @@ Summary:	ROCm system info utility
 
 License:	NCSA
 URL:		https://github.com/RadeonOpenCompute/rocminfo
-Source0:	https://github.com/RadeonOpenCompute/rocminfo/archive/1.0.0/rocm-info-1.0.0.tar.gz
+Source0:	https://github.com/RadeonOpenCompute/rocminfo/archive/1.0.0/rocminfo-1.0.0.tar.gz
 Patch0:		0001-Fix-rocm-runtime-libdir.patch
 Patch1:		0001-Use-CXXFLAGS-defined-in-the-environment.patch
 Patch2:		0001-Convert-rocm-agent-enumerator-to-python3.patch
