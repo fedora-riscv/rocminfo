@@ -1,6 +1,6 @@
 Name:		rocminfo
 Version:	1.0.0
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	ROCm system info utility
 
 License:	NCSA
@@ -50,6 +50,9 @@ install -p -m 0755 rocminfo %{buildroot}%{_bindir}
 
 
 %changelog
+* Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
 * Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
