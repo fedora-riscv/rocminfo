@@ -1,6 +1,7 @@
+%define __cmake_in_source_build 1
 Name:		rocminfo
 Version:	1.0.0
-Release:	6%{?dist}
+Release:	7%{?dist}
 Summary:	ROCm system info utility
 
 License:	NCSA
@@ -50,6 +51,9 @@ install -p -m 0755 rocminfo %{buildroot}%{_bindir}
 
 
 %changelog
+* Tue Sep 22 2020 Jeff Law <law@redhat.com> - 1.0.0-7
+- Use cmake_in_source_build to fix FTBFS due to recent cmake macro changes
+
 * Sat Aug 01 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-6
 - Second attempt - Rebuilt for
   https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
