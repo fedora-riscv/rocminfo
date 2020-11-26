@@ -1,0 +1,25 @@
+From f59d740a6358fd763b7f4a82549c09e2287a47bf Mon Sep 17 00:00:00 2001
+From: Philipp Knechtges <philipp-dev@knechtges.com>
+Date: Tue, 24 Nov 2020 20:52:31 +0100
+Subject: [PATCH 2/2] fix buildtype detection
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 5df8432..ca6a463 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,7 +60,7 @@ include(utils)
+ find_package(hsa-runtime64 1.0 REQUIRED )
+ 
+ string(TOLOWER "${ROCRTST_BLD_TYPE}" tmp)
+-if("${tmp}" STREQUAL release)
++if(NOT "${tmp}" STREQUAL debug)
+   set(BUILD_TYPE "Release")
+   set(ISDEBUG 0)
+ else()
+-- 
+2.28.0
+

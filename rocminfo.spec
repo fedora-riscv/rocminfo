@@ -1,16 +1,14 @@
 %define __cmake_in_source_build 1
 Name:		rocminfo
-Version:	1.0.0
-Release:	7%{?dist}
+Version:	3.9.0
+Release:	0%{?dist}
 Summary:	ROCm system info utility
 
 License:	NCSA
 URL:		https://github.com/RadeonOpenCompute/rocminfo
-Source0:	https://github.com/RadeonOpenCompute/rocminfo/archive/1.0.0/rocminfo-1.0.0.tar.gz
-Patch0:		0001-Fix-rocm-runtime-libdir.patch
-Patch1:		0001-Use-CXXFLAGS-defined-in-the-environment.patch
-Patch2:		0001-Convert-rocm-agent-enumerator-to-python3.patch
-Patch3:		0001-Remove-x86_64-specific-compiler-flags.patch
+Source0:	https://github.com/RadeonOpenCompute/rocminfo/archive/rocm-%{version}.tar.gz
+Patch0:		0001-adjust-CMAKE_CXX_FLAGS.patch
+Patch1:		0002-fix-buildtype-detection.patch
 
 ExclusiveArch: x86_64 aarch64
 
@@ -25,7 +23,7 @@ ROCm system info utility
 
 
 %prep
-%autosetup -n %{name}-%{version} -p1
+%autosetup -n %{name}-rocm-%{version} -p1
 
 pathfix.py -i %{__python3} rocm_agent_enumerator
 
@@ -51,6 +49,9 @@ install -p -m 0755 rocminfo %{buildroot}%{_bindir}
 
 
 %changelog
+* Tue Nov 24 2020 Philipp Knechtges <philipp-dev@knechtges.com> - 3.9.0-0
+- Version 3.9.0
+
 * Tue Sep 22 2020 Jeff Law <law@redhat.com> - 1.0.0-7
 - Use cmake_in_source_build to fix FTBFS due to recent cmake macro changes
 
