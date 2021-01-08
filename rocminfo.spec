@@ -12,6 +12,7 @@ Patch1:		0002-fix-buildtype-detection.patch
 
 ExclusiveArch: x86_64 aarch64
 
+BuildRequires: make
 BuildRequires:	gcc-c++
 BuildRequires:	cmake
 BuildRequires:	rocm-runtime-devel >= 2.0.0
