@@ -1,7 +1,7 @@
 %define __cmake_in_source_build 1
 Name:		rocminfo
 Version:	3.9.0
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	ROCm system info utility
 
 License:	NCSA
@@ -50,6 +50,9 @@ install -p -m 0755 rocminfo %{buildroot}%{_bindir}
 
 
 %changelog
+* Fri Jan 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 3.9.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
 * Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 3.9.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
