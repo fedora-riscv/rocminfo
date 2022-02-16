@@ -1,4 +1,4 @@
-From f59d740a6358fd763b7f4a82549c09e2287a47bf Mon Sep 17 00:00:00 2001
+From 1656c2d14b276f31dd61d8639e7e8b75c7d282b0 Mon Sep 17 00:00:00 2001
 From: Philipp Knechtges <philipp-dev@knechtges.com>
 Date: Tue, 24 Nov 2020 20:52:31 +0100
 Subject: [PATCH 2/2] fix buildtype detection
@@ -8,7 +8,7 @@ Subject: [PATCH 2/2] fix buildtype detection
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 5df8432..ca6a463 100755
+index 8839e06..4ecc3da 100755
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -60,7 +60,7 @@ include(utils)
@@ -21,5 +21,5 @@ index 5df8432..ca6a463 100755
    set(ISDEBUG 0)
  else()
 -- 
-2.28.0
+2.34.1
 
