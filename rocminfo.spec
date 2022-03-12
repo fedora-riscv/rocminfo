@@ -1,7 +1,7 @@
 %define __cmake_in_source_build 1
 Name:		rocminfo
 Version:	5.0.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	ROCm system info utility
 
 License:	NCSA
@@ -18,6 +18,9 @@ BuildRequires:	cmake
 BuildRequires:	rocm-runtime-devel >= 2.0.0
 # We need python3-devel for pathfix.py
 BuildRequires:	python3-devel
+
+# rocminfo calls lsmod to check the kernel mode driver status
+Requires:		kmod
 
 %description
 ROCm system info utility
@@ -50,6 +53,9 @@ install -p -m 0755 rocminfo %{buildroot}%{_bindir}
 
 
 %changelog
+* Sat Mar 12 2022 Jeremy Newton <alexjnewt at hotmail dot com> - 5.0.0-2
+- Add missing kmod requirement
+
 * Wed Feb 16 2022 Jeremy Newton <alexjnewt at hotmail dot com> - 5.0.0-1
 - Update to ROCm version 5.0.0
 
