@@ -1,7 +1,7 @@
 %define __cmake_in_source_build 1
 Name:		rocminfo
-Version:	5.0.0
-Release:	2%{?dist}
+Version:	5.1.0
+Release:	1%{?dist}
 Summary:	ROCm system info utility
 
 License:	NCSA
@@ -53,6 +53,9 @@ install -p -m 0755 rocminfo %{buildroot}%{_bindir}
 
 
 %changelog
+* Thu Mar 31 2022 Jeremy Newton <alexjnewt at hotmail dot com> - 5.1.0-1
+- Update to 5.1.0
+
 * Sat Mar 12 2022 Jeremy Newton <alexjnewt at hotmail dot com> - 5.0.0-2
 - Add missing kmod requirement
 
