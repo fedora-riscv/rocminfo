@@ -1,7 +1,7 @@
 %define __cmake_in_source_build 1
 Name:		rocminfo
 Version:	5.1.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	ROCm system info utility
 
 License:	NCSA
@@ -10,7 +10,7 @@ Source0:	https://github.com/RadeonOpenCompute/rocminfo/archive/rocm-%{version}.t
 Patch0:		0001-adjust-CMAKE_CXX_FLAGS.patch
 Patch1:		0002-fix-buildtype-detection.patch
 
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 aarch64 ppc64le
 
 BuildRequires: make
 BuildRequires:	gcc-c++
@@ -53,6 +53,9 @@ install -p -m 0755 rocminfo %{buildroot}%{_bindir}
 
 
 %changelog
+* Tue Apr 05 2022 Jeremy Newton <alexjnewt at hotmail dot com> - 5.1.0-2
+- Enable ppc64le
+
 * Thu Mar 31 2022 Jeremy Newton <alexjnewt at hotmail dot com> - 5.1.0-1
 - Update to 5.1.0
 
