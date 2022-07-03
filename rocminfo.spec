@@ -1,7 +1,6 @@
-%define __cmake_in_source_build 1
 Name:		rocminfo
-Version:	5.1.0
-Release:	2%{?dist}
+Version:	5.2.0
+Release:	1%{?dist}
 Summary:	ROCm system info utility
 
 License:	NCSA
@@ -32,27 +31,26 @@ ROCm system info utility
 pathfix.py -i %{__python3} rocm_agent_enumerator
 
 %build
-mkdir build
-cd build
-%cmake .. -DROCM_DIR=/usr
-%make_build
-
+%cmake -DROCM_DIR=/usr
+%cmake_build
 
 %install
-cd build
-
-mkdir -p %{buildroot}%{_bindir}
-install -p -m 0755 rocm_agent_enumerator %{buildroot}%{_bindir}
-install -p -m 0755 rocminfo %{buildroot}%{_bindir}
+%cmake_install
 
 %files
 %doc README.md
 %license License.txt
 %{_bindir}/rocm_agent_enumerator
 %{_bindir}/rocminfo
+#Duplicated files:
+%exclude %{_docdir}/*/License.txt
 
 
 %changelog
+* Sun Jul 03 2022 Jeremy Newton <alexjnewt at hotmail dot com> - 5.2.0-1
+- Update to 5.2.0
+- Fix cmake macro use
+
 * Tue Apr 05 2022 Jeremy Newton <alexjnewt at hotmail dot com> - 5.1.0-2
 - Enable ppc64le
 
