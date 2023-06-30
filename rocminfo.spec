@@ -1,5 +1,5 @@
 Name:		rocminfo
-Version:	5.5.0
+Version:	5.6.0
 Release:	1%{?dist}
 Summary:	ROCm system info utility
 
@@ -49,6 +49,9 @@ chmod 755 %{buildroot}%{_bindir}/*
 
 
 %changelog
+* Thu Jun 29 2023 Jeremy Newton <alexjnewt at hotmail dot com> - 5.6.0-1
+- Update to 5.6
+
 * Mon May 01 2023 Jeremy Newton <alexjnewt at hotmail dot com> - 5.5.0-1
 - Update to 5.5
 
