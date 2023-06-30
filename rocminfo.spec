@@ -1,5 +1,9 @@
+%global rocm_release 5.6
+%global rocm_patch 0
+%global rocm_version %{rocm_release}.%{rocm_patch}
+
 Name:		rocminfo
-Version:	5.6.0
+Version:	%{rocm_version}
 Release:	1%{?dist}
 Summary:	ROCm system info utility
 
@@ -14,7 +18,7 @@ ExclusiveArch: x86_64 aarch64 ppc64le
 BuildRequires: make
 BuildRequires:	gcc-c++
 BuildRequires:	cmake
-BuildRequires:	rocm-runtime-devel >= 2.0.0
+BuildRequires:	rocm-runtime-devel >= %{rocm_release}.0
 BuildRequires:	python3-devel
 
 # rocminfo calls lsmod to check the kernel mode driver status
