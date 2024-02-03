@@ -4,7 +4,7 @@
 
 Name:		rocminfo
 Version:	%{rocm_version}
-Release:	1%{?dist}
+Release:	1.rv64%{?dist}
 Summary:	ROCm system info utility
 
 License:	NCSA
@@ -13,7 +13,7 @@ Source0:	https://github.com/RadeonOpenCompute/rocminfo/archive/rocm-%{version}.t
 Patch0:		0001-adjust-CMAKE_CXX_FLAGS.patch
 Patch1:		0002-fix-buildtype-detection.patch
 
-ExclusiveArch: x86_64 aarch64 ppc64le
+ExclusiveArch: x86_64 aarch64 ppc64le riscv64
 
 BuildRequires: make
 BuildRequires:	gcc-c++
@@ -53,6 +53,9 @@ chmod 755 %{buildroot}%{_bindir}/*
 
 
 %changelog
+* Sat Feb 03 2024 Songsong Zhang <U2FsdGVkX1@gmail.com> - 5.7.0-1.rv64
+- Add riscv64 support
+
 * Sun Sep 17 2023 Jeremy Newton <alexjnewt at hotmail dot com> - 5.7.0-1
 - Update to 5.7
 
