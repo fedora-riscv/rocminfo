@@ -4,7 +4,7 @@
 
 Name:		rocminfo
 Version:	%{rocm_version}
-Release:	%autorelease
+Release:	%autorelease -e rv64
 Summary:	ROCm system info utility
 
 License:	NCSA
@@ -18,7 +18,7 @@ Patch1:		0002-fix-buildtype-detection.patch
 Patch2:		0003-fix-python-escape-sequences-pr55.patch
 
 
-ExclusiveArch: x86_64 aarch64 ppc64le
+ExclusiveArch: x86_64 aarch64 ppc64le riscv64
 
 BuildRequires:  make
 BuildRequires:	gcc-c++
